@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 CC := gcc
 
-CFLAGS := -Wall -Wextra -Werror -std=c99 -D_POSIX_C_SOURCE=200809L
+CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -std=c99 -D_POSIX_C_SOURCE=200809L
 
 LDLIBS := -lsqlite3
 
