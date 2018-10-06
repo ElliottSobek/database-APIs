@@ -359,8 +359,12 @@ static char *sqlite_get_version(void) {
 }
 
 int main(const int argc, char **const argv) {
-	printf("%d\n", argc);
-	printf("%s\n", argv[0]);
     _verbose_flag = true;
+
+    puts(sqlite_get_version());
+    sqlite_dumpdb();
+    sqlite_dumptable("sample");
+    sqlite_load_exec("test_fixture.sql");
+    sqlite_exec("SELECT * FROM sample;");
 	return EXIT_SUCCESS;
 }
