@@ -12,7 +12,5 @@
 # define NT_LEN 1
 
 int main(const int argc, char **const argv) {
-	printf("%d\n", argc);
-	printf("%s\n", argv[0]);
 	return EXIT_SUCCESS;
 }

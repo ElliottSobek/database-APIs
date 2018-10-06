@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 CC := gcc
 
-CFLAGS := -Wall -Wextra -Werror -std=c99
+CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -std=c99
 
 LDLIBS :=
 
