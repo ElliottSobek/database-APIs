@@ -35,6 +35,8 @@
 *.i*86
 *.x86_64
 *.hex
+sqlite3_api
+mysql_api
 
 # Debug files
 *.dSYM/
