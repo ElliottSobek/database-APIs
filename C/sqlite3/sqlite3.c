@@ -55,14 +55,11 @@ static Query parse_stmt(const char *restrict stmt) {
     if (!query)
         exit(EXIT_FAILURE);
 
-    // const size_t result_len = strnlen(result, KBYTE_S * 2);
-
     query->stmt = (char*) calloc(2048, sizeof(char));
 
     if (!query->stmt)
         exit(EXIT_FAILURE);
     strncpy(query->stmt, result, KBYTE_S * 2);
-    // (KBYTE_S * 2) + NT_LEN
     query->specifiers = (char*) calloc(64, sizeof(char));
 
     if (!query->specifiers)
@@ -235,7 +232,7 @@ static void sqlite_dumpdb(void) {
         fprintf(stderr, RED "Database Error: Cannot open source database: %s\n" RESET, sqlite3_errmsg(s_db));
         return;
     }
-    result_code = sqlite3_open("database/copy.sqlite3", &d_db);
+    result_code = sqlite3_open("copy.sqlite3", &d_db);
 
     if (result_code != SQLITE_OK) {
         fprintf(stderr, RED "Database Error: Cannot open destination database : %s\n" RESET, sqlite3_errmsg(d_db));
